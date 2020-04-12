@@ -1,0 +1,26 @@
+CMOS Image sensor project
+--------------------------
+
+This directory contains the Matlab source code and necessary data file (no scenes), 
+PowerPoint presentation with project details and Word Document with specific Semiconductor calculations.
+
+In order to run this project you need to place the scene4 and scene6 directories in parallel to this directory (i.e. one directory up from here).
+The project main file is called main.m , this project runs the setup file (which loads the data) and then processes SOC according to the different configurations and inputs.
+
+SOC uses CIS and ISP main files.
+Notice since the Bilateral filter is uses C-MEX file for performance you will need to compile it, this is the first step in the "setup" file however a C compiler is required in the system for this.
+The project has been tested with MatLab2009a.
+
+The output images are organized in the following way , for each scene there is separate zip file and directory, inside such directory the output images have the following naming convention:
+_ADC suffix : output from Analog to Digital converter
+_demosaicing suffix : output after demosaicing
+_final suffix : final SOC output after ISP
+
+moreover each scene has the following convention:
+_ideal : for Ideal settings without noise and full exposure
+_noise : 100% exposure with noise
+_10 : 100% exposure
+_1a,_1b,_1c : 1% exposure 3 random runs
+
+For example:
+scene4_1b_final - input is scene4 , setting is 1% exposure with noise (2'nd random run) , the output is after ISP
